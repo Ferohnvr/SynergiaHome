@@ -7,46 +7,86 @@
     <title>Synergia Group</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-        }
-        nav {
-            background-color: #333;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-        nav a:hover {
-            background-color: #575757;
-            transition: 0.3s;
+            background-color: #f4f4f4;
+            scroll-behavior: smooth;
         }
         header {
+            background-color: #333;
+            height: 100vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 100px 0;
-            background-color: #f4f4f4;
         }
         header h1 {
-            font-size: 48px;
+            font-size: 60px;
             margin: 0;
         }
         header p {
+            font-size: 20px;
+            color: #ccc;
+        }
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: inline-block;
+        }
+        .menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            position: absolute;
+            right: 20px;
+            top: 60px;
+            display: none;
+        }
+        .menu li {
+            border-bottom: 1px solid #444;
+        }
+        .menu a {
+            padding: 15px 20px;
+            display: block;
+            color: white;
+        }
+        .menu a:hover {
+            background-color: #575757;
+        }
+        /* Section Styles */
+        section {
+            padding: 100px 20px;
+            text-align: center;
+            display: none;
+        }
+        section h2 {
+            font-size: 36px;
+            color: #333;
+        }
+        section p {
             font-size: 18px;
-            margin: 10px 0;
             color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        /* Visible Sections */
+        #dienstleistungen:target, #management:target, #angebot:target, #projekte:target, #kontakt:target, #rechtliches:target {
+            display: block;
         }
         footer {
             background-color: #333;
             color: white;
             text-align: center;
             padding: 20px;
-            margin-top: 50px;
         }
         footer a {
             color: white;
@@ -57,23 +97,80 @@
 </head>
 <body>
 
-    <nav>
-        <a href="#dienstleistungen">Dienstleistungen</a>
-        <a href="#management">Management</a>
-        <a href="#angebot">Angebot</a>
-        <a href="#projekte">Projekte</a>
-        <a href="#kontakt">Kontakt</a>
-        <a href="#rechtliches">Rechtliches</a>
-    </nav>
-
+    <!-- Header Section -->
     <header>
-        <h1>Willkommen bei der Synergia Group</h1>
-        <p>Wir vereinen Innovation und Expertise, um Ihr Unternehmen zum Erfolg zu führen.</p>
+        <h1>Synergia Group</h1>
+        <p>Ihr Partner für Marketing, Management und innovative Lösungen</p>
+        <nav>
+            <ul class="menu">
+                <li><a href="#dienstleistungen">Dienstleistungen</a></li>
+                <li><a href="#management">Management</a></li>
+                <li><a href="#angebot">Angebot</a></li>
+                <li><a href="#projekte">Projekte</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+                <li><a href="#rechtliches">Rechtliches</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <footer id="rechtliches">
+    <!-- Home Page Content -->
+    <section id="home">
+        <h2>Willkommen bei der Synergia Group</h2>
+        <p>Wir bieten maßgeschneiderte Lösungen für Marketing, Management und Webentwicklung, um Ihre Marke zum Blühen zu bringen.</p>
+    </section>
+
+    <!-- Dienstleistungen Section -->
+    <section id="dienstleistungen">
+        <h2>Dienstleistungen</h2>
+        <p>Wir erstellen professionelle Webseiten nach euren Wünschen. Ob für Unternehmen, Influencer oder Musiker – wir sorgen dafür, dass eure Online-Präsenz modern, benutzerfreundlich und ansprechend gestaltet wird. Unsere Webseiten sind für Mobilgeräte optimiert und lassen sich leicht verwalten.</p>
+        <p>Unser Team unterstützt euch dabei, eure Marke oder Projekte bekannt zu machen. Wir entwickeln maßgeschneiderte Marketingstrategien, die euch helfen, eure Zielgruppe effektiv zu erreichen. Von Social Media Marketing über Google Ads bis hin zu Influencer-Kampagnen – wir bieten euch alles, was ihr für erfolgreiches Marketing benötigt.</p>
+        <p>Damit eure Webseite immer erreichbar ist, bieten wir zuverlässiges Hosting an. Mit schnellen Ladezeiten, regelmäßigen Backups und einem hohen Maß an Sicherheit stellen wir sicher, dass eure Webseite rund um die Uhr online bleibt.</p>
+    </section>
+
+    <!-- Management Section -->
+    <section id="management">
+        <h2>Management</h2>
+        <p>Wir von Synergia Group bieten ein professionelles Management für Influencer, Unternehmen und Musiker – und das ohne direkte Kosten. Stattdessen arbeiten wir auf Basis einer Gegenleistung: Wir unterstützen euch und erhalten im Gegenzug Werbung auf euren Kanälen.</p>
+        <p>Unser Ziel ist es, euch mit wertvollen Ratschlägen zu begleiten. Dabei analysieren wir, was ihr bereits gut macht und wo es noch Potenzial zur Verbesserung gibt. Egal ob Social Media Präsenz, Markenstrategie oder die richtige Zielgruppenansprache – wir stehen euch mit unserem Know-how zur Seite, um euch auf das nächste Level zu bringen.</p>
+        <p>Gemeinsam sorgen wir für euren Erfolg!</p>
+    </section>
+
+    <!-- Angebot Section -->
+    <section id="angebot">
+        <h2>Angebot</h2>
+        <p>Holt euch jetzt ein individuelles Angebot für unsere Dienstleistungen! <a href="#">Jetzt Angebot einholen</a></p>
+    </section>
+
+    <!-- Projekte Section -->
+    <section id="projekte">
+        <h2>Projekte</h2>
+        <p>KlarTextExperte – Ein Online-Forum für Schüler. Mit KlarTextExperte bieten wir Schülern eine Plattform, um sich auszutauschen, Fragen zu stellen und Lernressourcen zu teilen. Unser Ziel ist es, Schülern eine unkomplizierte Möglichkeit zu bieten, von Gleichgesinnten und Experten zu lernen.</p>
+    </section>
+
+    <!-- Kontakt Section -->
+    <section id="kontakt">
+        <h2>Kontakt</h2>
+        <p>E-Mail: <a href="mailto:synergiagroup@web.de">synergiagroup@web.de</a><br>
+        Adresse: Feuergraben 41, 31785 Hameln</p>
+    </section>
+
+    <!-- Rechtliches Section -->
+    <section id="rechtliches">
+        <h2>Rechtliches</h2>
+        <h3>Allgemeine Geschäftsbedingungen (AGB)</h3>
+        <p>1. Vertragsgegenstand: Die Synergia Group erbringt Dienstleistungen im Bereich Webseitenerstellung, Marketing und Hosting. Diese AGB regeln die Zusammenarbeit zwischen der Synergia Group und ihren Kunden.</p>
+        <p>2. Leistungsumfang: Die Synergia Group verpflichtet sich, die im Angebot vereinbarten Dienstleistungen nach bestem Wissen und Gewissen zu erbringen. Änderungen oder Erweiterungen der Leistungen bedürfen der schriftlichen Zustimmung beider Parteien.</p>
+        <p>3. Vergütung: Die Vergütung erfolgt gemäß dem individuell vereinbarten Angebot. Die Preise sind netto und verstehen sich zuzüglich der gesetzlichen Mehrwertsteuer, soweit diese anfällt.</p>
+        <p>4. Vertragsdauer und Kündigung: Die Vertragsdauer richtet sich nach dem vereinbarten Projekt. Beide Parteien haben das Recht, den Vertrag aus wichtigem Grund fristlos zu kündigen.</p>
+        <p>5. Haftung: Die Synergia Group haftet nur für vorsätzliche oder grob fahrlässige Schäden.</p>
+        <p>6. Datenschutz: Die Synergia Group verpflichtet sich, die Daten ihrer Kunden vertraulich zu behandeln.</p>
+        <p>7. Gerichtsstand: Der Gerichtsstand ist Hameln, sofern nicht gesetzlich etwas anderes bestimmt ist.</p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
         <p>
-            <a href="#">AGB</a> | <a href="#">Datenschutzrichtlinien</a>
+            <a href="#rechtliches">AGB</a> | <a href="#rechtliches">Datenschutzrichtlinien</a>
         </p>
         <p>&copy; 2024 Synergia Group. Alle Rechte vorbehalten.</p>
     </footer>
