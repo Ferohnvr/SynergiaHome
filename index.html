@@ -89,6 +89,11 @@
             text-decoration: none;
             padding: 0 10px;
         }
+        .trust {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #FFD700; /* Goldfarbe */
+        }
     </style>
 </head>
 <body>
@@ -103,13 +108,13 @@
     <nav>
         <button class="menu-toggle">Menu</button>
         <div class="menu">
-            <a href="#home">Home</a>
-            <a href="#dienstleistungen">Dienstleistungen</a>
-            <a href="#management">Management</a>
-            <a href="#angebot">Angebot</a>
-            <a href="#projekte">Projekte</a>
-            <a href="#kontakt">Kontakt</a>
-            <a href="#rechtliches">Rechtliches</a>
+            <a href="#home" onclick="closeMenu()">Home</a>
+            <a href="#dienstleistungen" onclick="closeMenu()">Dienstleistungen</a>
+            <a href="#management" onclick="closeMenu()">Management</a>
+            <a href="#angebot" onclick="closeMenu()">Angebot</a>
+            <a href="#projekte" onclick="closeMenu()">Projekte</a>
+            <a href="#kontakt" onclick="closeMenu()">Kontakt</a>
+            <a href="#rechtliches" onclick="closeMenu()">Rechtliches</a>
         </div>
     </nav>
 
@@ -137,7 +142,8 @@
     <!-- Angebot Section -->
     <section id="angebot">
         <h2>Angebot</h2>
-        <p>Holt euch jetzt ein individuelles Angebot für unsere Dienstleistungen! <a href="#">Jetzt Angebot einholen</a></p>
+        <p>Holt euch jetzt ein individuelles Angebot für unsere Dienstleistungen!</p>
+        <p><a href="#kontakt">Jetzt Angebot einholen</a></p>
     </section>
 
     <!-- Projekte Section -->
@@ -180,6 +186,7 @@
         <p>
             <a href="#rechtliches">AGB</a> | <a href="#rechtliches">Datenschutzrichtlinien</a>
         </p>
+        <p class="trust">TrustStern der Synergia Group</p>
         <p>&copy; 2024 Synergia Group. Alle Rechte vorbehalten.</p>
     </footer>
 
@@ -194,6 +201,10 @@
                 menu.style.display = "block";
             }
         });
+
+        function closeMenu() {
+            menu.style.display = "none";
+        }
     </script>
 
 </body>
