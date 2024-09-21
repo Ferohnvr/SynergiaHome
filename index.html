@@ -3,162 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Synergia Group</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
         }
         nav {
-            display: flex;
-            justify-content: center;
-            padding: 10px;
-            background-color: #444;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 14px 20px;
-        }
-        nav a:hover {
-            background-color: #555;
-        }
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-        }
-        .hero {
             background-color: #333;
-            color: #fff;
-            padding: 60px 20px;
+            padding: 10px;
             text-align: center;
         }
-        .hero h1 {
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background-color: #575757;
+            transition: 0.3s;
+        }
+        header {
+            text-align: center;
+            padding: 100px 0;
+            background-color: #f4f4f4;
+        }
+        header h1 {
+            font-size: 48px;
             margin: 0;
-            font-size: 3em;
         }
-        .section {
-            background-color: #fff;
-            padding: 40px;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .section h2 {
-            margin-top: 0;
-        }
-        .partners {
-            background-color: #f9f9f9;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        .partners h3 {
-            margin-top: 0;
-        }
-        .partners ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .partners li {
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
+        header p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #666;
         }
         footer {
             background-color: #333;
-            color: #fff;
-            padding: 10px;
+            color: white;
             text-align: center;
+            padding: 20px;
+            margin-top: 50px;
         }
         footer a {
-            color: #fff;
+            color: white;
             text-decoration: none;
-            margin: 0 10px;
-        }
-        footer a:hover {
-            text-decoration: underline;
+            padding: 0 10px;
         }
     </style>
 </head>
 <body>
+
+    <nav>
+        <a href="#dienstleistungen">Dienstleistungen</a>
+        <a href="#management">Management</a>
+        <a href="#angebot">Angebot</a>
+        <a href="#projekte">Projekte</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#rechtliches">Rechtliches</a>
+    </nav>
+
     <header>
-        <h1>Synergia Group</h1>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#services">Dienstleistungen</a>
-            <a href="#experience">Erfahrung</a>
-            <a href="#projects">Projekte</a>
-            <a href="#goals">Ziele</a>
-            <a href="#management">Management</a>
-            <a href="#contact">Kontakt</a>
-            <a href="webseiten.html">Webseiten</a>
-            <a href="sonstige.html">Sonstige Seiten</a>
-        </nav>
-    </header>
-    
-    <div class="hero" id="home">
         <h1>Willkommen bei der Synergia Group</h1>
-        <p>Ihr Partner für erstklassige Webseiten, Marketing und mehr.</p>
-    </div>
-    
-    <div class="container">
-        <div class="section" id="services">
-            <h2>Unsere Dienstleistungen</h2>
-            <p>Wir bieten maßgeschneiderte Lösungen in den Bereichen Webdesign, Marketing, Vertrieb, Werbung und mehr. Lassen Sie uns Ihre Online-Präsenz optimieren und Ihre Ziele erreichen.</p>
-        </div>
-        
-        <div class="section" id="experience">
-            <h2>Unsere Erfahrung</h2>
-            <p>Mit jahrelanger Erfahrung in verschiedenen Geschäftsbereichen sind wir Ihr zuverlässiger Partner für innovative und effektive Lösungen.</p>
-        </div>
-        
-        <div class="section" id="projects">
-            <h2>Unsere Projekte</h2>
-            <p>Hier finden Sie eine Auswahl unserer erfolgreich umgesetzten Projekte. Jedes Projekt ist einzigartig und zeigt unsere Fähigkeit, maßgeschneiderte Lösungen zu liefern.</p>
-        </div>
-        
-        <div class="section" id="goals">
-            <h2>Unsere Ziele</h2>
-            <p>Unser Ziel ist es, Ihren Erfolg durch innovative und individuelle Lösungen zu fördern. Wir streben danach, Ihnen den besten Service zu bieten und Ihre Erwartungen zu übertreffen.</p>
-        </div>
-        
-        <div class="section" id="management">
-            <h2>Unser Management</h2>
-            <p>Unser Management-Team besteht aus erfahrenen Fachleuten, die mit ihrem Wissen und ihrer Expertise den Erfolg Ihres Unternehmens unterstützen.</p>
-        </div>
-        
-        <div class="section" id="contact">
-            <h2>Kontaktieren Sie uns</h2>
-            <p>Haben Sie Fragen oder möchten Sie ein Angebot erhalten? Kontaktieren Sie uns einfach per E-Mail oder Telefon. Wir freuen uns auf Ihre Nachricht!</p>
-        </div>
-        
-        <div class="section">
-            <h2>Optimieren Sie Ihre Webseite und Ihr Marketing</h2>
-            <p>Sie suchen eine perfekt abgestimmte Webseite, um Ihr Unternehmen optimal zu präsentieren? Kontaktieren Sie uns jetzt! Wir bieten maßgeschneiderte Lösungen, um Ihre Online-Präsenz zu verbessern und Ihre Ziele zu erreichen.</p>
-        </div>
-        
-        <div class="partners">
-            <h3>Unsere Partner</h3>
-            <ul>
-                <li>Weser-Blick Hameln</li>
-                <li>Rifa Group</li>
-                <li>Synergia Marketing</li>
-                <li>KlartextExperte</li>
-            </ul>
-        </div>
-    </div>
-    
-    <footer>
-        <p>&copy; 2024 Synergia Group. Alle Rechte vorbehalten. AGB | Datenschutzrichtlinie</p>
+        <p>Wir vereinen Innovation und Expertise, um Ihr Unternehmen zum Erfolg zu führen.</p>
+    </header>
+
+    <footer id="rechtliches">
+        <p>
+            <a href="#">AGB</a> | <a href="#">Datenschutzrichtlinien</a>
+        </p>
+        <p>&copy; 2024 Synergia Group. Alle Rechte vorbehalten.</p>
     </footer>
+
 </body>
 </html>
