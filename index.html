@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Synergia Group</title>
     <style>
         body {
@@ -62,7 +61,9 @@
         .menu a:hover {
             background-color: #575757;
         }
-        /* Section Styles */
+        #menu-toggle:checked + .menu {
+            display: block;
+        }
         section {
             padding: 100px 20px;
             text-align: center;
@@ -78,8 +79,7 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        /* Visible Sections */
-        #dienstleistungen:target, #management:target, #angebot:target, #projekte:target, #kontakt:target, #rechtliches:target {
+        #home:target, #dienstleistungen:target, #management:target, #angebot:target, #projekte:target, #kontakt:target, #rechtliches:target {
             display: block;
         }
         footer {
@@ -102,6 +102,8 @@
         <h1>Synergia Group</h1>
         <p>Ihr Partner für Marketing, Management und innovative Lösungen</p>
         <nav>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle">☰</label>
             <ul class="menu">
                 <li><a href="#dienstleistungen">Dienstleistungen</a></li>
                 <li><a href="#management">Management</a></li>
@@ -122,17 +124,16 @@
     <!-- Dienstleistungen Section -->
     <section id="dienstleistungen">
         <h2>Dienstleistungen</h2>
-        <p>Wir erstellen professionelle Webseiten nach euren Wünschen. Ob für Unternehmen, Influencer oder Musiker – wir sorgen dafür, dass eure Online-Präsenz modern, benutzerfreundlich und ansprechend gestaltet wird. Unsere Webseiten sind für Mobilgeräte optimiert und lassen sich leicht verwalten.</p>
-        <p>Unser Team unterstützt euch dabei, eure Marke oder Projekte bekannt zu machen. Wir entwickeln maßgeschneiderte Marketingstrategien, die euch helfen, eure Zielgruppe effektiv zu erreichen. Von Social Media Marketing über Google Ads bis hin zu Influencer-Kampagnen – wir bieten euch alles, was ihr für erfolgreiches Marketing benötigt.</p>
+        <p>Wir erstellen professionelle Webseiten nach euren Wünschen. Ob für Unternehmen, Influencer oder Musiker – wir sorgen dafür, dass eure Online-Präsenz modern, benutzerfreundlich und ansprechend gestaltet wird.</p>
+        <p>Unser Team unterstützt euch dabei, eure Marke oder Projekte bekannt zu machen. Wir entwickeln maßgeschneiderte Marketingstrategien, die euch helfen, eure Zielgruppe effektiv zu erreichen.</p>
         <p>Damit eure Webseite immer erreichbar ist, bieten wir zuverlässiges Hosting an. Mit schnellen Ladezeiten, regelmäßigen Backups und einem hohen Maß an Sicherheit stellen wir sicher, dass eure Webseite rund um die Uhr online bleibt.</p>
     </section>
 
     <!-- Management Section -->
     <section id="management">
         <h2>Management</h2>
-        <p>Wir von Synergia Group bieten ein professionelles Management für Influencer, Unternehmen und Musiker – und das ohne direkte Kosten. Stattdessen arbeiten wir auf Basis einer Gegenleistung: Wir unterstützen euch und erhalten im Gegenzug Werbung auf euren Kanälen.</p>
-        <p>Unser Ziel ist es, euch mit wertvollen Ratschlägen zu begleiten. Dabei analysieren wir, was ihr bereits gut macht und wo es noch Potenzial zur Verbesserung gibt. Egal ob Social Media Präsenz, Markenstrategie oder die richtige Zielgruppenansprache – wir stehen euch mit unserem Know-how zur Seite, um euch auf das nächste Level zu bringen.</p>
-        <p>Gemeinsam sorgen wir für euren Erfolg!</p>
+        <p>Wir bieten professionelles Management für Influencer, Unternehmen und Musiker – ohne direkte Kosten. Stattdessen arbeiten wir auf Basis einer Gegenleistung: Wir unterstützen euch und erhalten im Gegenzug Werbung auf euren Kanälen.</p>
+        <p>Unser Ziel ist es, euch mit wertvollen Ratschlägen zu begleiten. Dabei analysieren wir, was ihr bereits gut macht und wo es noch Potenzial zur Verbesserung gibt.</p>
     </section>
 
     <!-- Angebot Section -->
@@ -144,7 +145,7 @@
     <!-- Projekte Section -->
     <section id="projekte">
         <h2>Projekte</h2>
-        <p>KlarTextExperte – Ein Online-Forum für Schüler. Mit KlarTextExperte bieten wir Schülern eine Plattform, um sich auszutauschen, Fragen zu stellen und Lernressourcen zu teilen. Unser Ziel ist es, Schülern eine unkomplizierte Möglichkeit zu bieten, von Gleichgesinnten und Experten zu lernen.</p>
+        <p>KlarTextExperte – Ein Online-Forum für Schüler. Mit KlarTextExperte bieten wir Schülern eine Plattform, um sich auszutauschen und Lernressourcen zu teilen.</p>
     </section>
 
     <!-- Kontakt Section -->
@@ -158,13 +159,22 @@
     <section id="rechtliches">
         <h2>Rechtliches</h2>
         <h3>Allgemeine Geschäftsbedingungen (AGB)</h3>
-        <p>1. Vertragsgegenstand: Die Synergia Group erbringt Dienstleistungen im Bereich Webseitenerstellung, Marketing und Hosting. Diese AGB regeln die Zusammenarbeit zwischen der Synergia Group und ihren Kunden.</p>
-        <p>2. Leistungsumfang: Die Synergia Group verpflichtet sich, die im Angebot vereinbarten Dienstleistungen nach bestem Wissen und Gewissen zu erbringen. Änderungen oder Erweiterungen der Leistungen bedürfen der schriftlichen Zustimmung beider Parteien.</p>
-        <p>3. Vergütung: Die Vergütung erfolgt gemäß dem individuell vereinbarten Angebot. Die Preise sind netto und verstehen sich zuzüglich der gesetzlichen Mehrwertsteuer, soweit diese anfällt.</p>
-        <p>4. Vertragsdauer und Kündigung: Die Vertragsdauer richtet sich nach dem vereinbarten Projekt. Beide Parteien haben das Recht, den Vertrag aus wichtigem Grund fristlos zu kündigen.</p>
+        <p>1. Vertragsgegenstand: Die Synergia Group erbringt Dienstleistungen im Bereich Webseitenerstellung, Marketing und Hosting.</p>
+        <p>2. Leistungsumfang: Die Synergia Group verpflichtet sich, die im Angebot vereinbarten Dienstleistungen nach bestem Wissen und Gewissen zu erbringen.</p>
+        <p>3. Vergütung: Die Vergütung erfolgt gemäß dem individuell vereinbarten Angebot.</p>
+        <p>4. Vertragsdauer und Kündigung: Die Vertragsdauer richtet sich nach dem vereinbarten Projekt.</p>
         <p>5. Haftung: Die Synergia Group haftet nur für vorsätzliche oder grob fahrlässige Schäden.</p>
         <p>6. Datenschutz: Die Synergia Group verpflichtet sich, die Daten ihrer Kunden vertraulich zu behandeln.</p>
-        <p>7. Gerichtsstand: Der Gerichtsstand ist Hameln, sofern nicht gesetzlich etwas anderes bestimmt ist.</p>
+        <p>7. Gerichtsstand: Der Gerichtsstand ist Hameln.</p>
+        
+        <h3>Datenschutzerklärung</h3>
+        <p>1. Verantwortlicher: Synergia Group, Feuergraben 41, 31785 Hameln.</p>
+        <p>2. Erhebung personenbezogener Daten: Wir erheben nur notwendige Daten für die Durchführung unserer Dienstleistungen.</p>
+        <p>3. Weitergabe von Daten: Personenbezogene Daten werden nur dann an Dritte weitergegeben, wenn dies für die Vertragserfüllung notwendig ist.</p>
+        <p>4. Datenaufbewahrung: Wir speichern Daten nur so lange, wie es für die Erbringung unserer Dienstleistungen notwendig ist.</p>
+        <p>5. Rechte der betroffenen Personen: Ihr habt das Recht auf Auskunft, Berichtigung, Löschung oder Einschränkung der Verarbeitung.</p>
+        <p>6. Datensicherheit: Wir setzen technische Maßnahmen ein, um eure Daten zu schützen.</p>
+        <p>7. Änderungen: Wir behalten uns vor, diese Datenschutzerklärung zu ändern.</p>
     </section>
 
     <!-- Footer Section -->
