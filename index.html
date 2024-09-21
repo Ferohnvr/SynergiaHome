@@ -93,6 +93,10 @@
             margin-top: 20px;
             font-size: 24px;
             color: #FFD700; /* Goldfarbe */
+            cursor: pointer;
+        }
+        .trust:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -186,26 +190,29 @@
         <p>
             <a href="#rechtliches">AGB</a> | <a href="#rechtliches">Datenschutzrichtlinien</a>
         </p>
-        <p class="trust">TrustStern der Synergia Group</p>
+        <span class="trust" onclick="window.location.href='#trust';">⭐ TrustStern der Synergia Group</span>
         <p>&copy; 2024 Synergia Group. Alle Rechte vorbehalten.</p>
     </footer>
 
-    <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const menu = document.querySelector('.menu');
+    <!-- Trust Stern Section -->
+    <section id="trust" style="display:none;">
+        <h2>Trust Stern der Synergia Group</h2>
+        <p>Die Synergia Group ist der Eigentümer des Trust Sterns. Unser Ziel ist es, Transparenz und Vertrauen zu fördern. Wir stehen für Qualität und Zuverlässigkeit in allen unseren Dienstleistungen.</p>
+        <p>Unsere Rechtstexte sind wie folgt: Eigentumserklärung des Trust Sterns
 
-        menuToggle.addEventListener('click', () => {
-            if (menu.style.display === "block") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
-            }
-        });
+Die Synergia Group ist der ausschließliche Eigentümer des Trust Sterns. Dieser Stern symbolisiert unser Engagement für Qualität und Vertrauen in allen angebotenen Dienstleistungen.
 
-        function closeMenu() {
-            menu.style.display = "none";
-        }
-    </script>
+Nutzungsbedingungen
 
-</body>
-</html>
+	1.	Rechte: Die Verwendung des Trust Sterns ist nur mit ausdrücklicher Genehmigung der Synergia Group gestattet. Eine unautorisierte Nutzung ist untersagt.
+	2.	Haftungsausschluss: Die Synergia Group übernimmt keine Verantwortung für Schäden, die aus der Verwendung des Trust Sterns entstehen.
+	3.	Änderungen: Die Synergia Group behält sich das Recht vor, diese Eigentumserklärung jederzeit zu ändern.
+	4.	Gerichtsstand: Für alle Streitigkeiten im Zusammenhang mit der Nutzung des Trust Sterns gilt der Gerichtsstand Hameln.
+
+Kontakt
+
+Bei Fragen oder Anliegen wenden Sie sich bitte an:
+E-Mail: synergiagroup@web.de
+</p>
+        <ul>
+            <
