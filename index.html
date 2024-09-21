@@ -91,14 +91,36 @@
         }
         .trust {
             margin-top: 20px;
-            font-size: 24px;
+            font-size: 18px; /* Kleinere Schriftgröße für den Trust Stern */
             color: #FFD700; /* Goldfarbe */
             cursor: pointer;
         }
-        .trust:hover {
-            text-decoration: underline;
+        .trust-text {
+            display: none;
+            text-align: left;
+            margin: 20px auto;
+            max-width: 600px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
         }
     </style>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+        
+        function closeMenu() {
+            document.querySelector('.menu').style.display = 'none';
+        }
+        
+        function toggleTrustText() {
+            const trustText = document.querySelector('.trust-text');
+            trustText.style.display = trustText.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
 </head>
 <body>
 
@@ -110,7 +132,7 @@
 
     <!-- Navigation -->
     <nav>
-        <button class="menu-toggle">Menu</button>
+        <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
         <div class="menu">
             <a href="#home" onclick="closeMenu()">Home</a>
             <a href="#dienstleistungen" onclick="closeMenu()">Dienstleistungen</a>
@@ -122,97 +144,60 @@
         </div>
     </nav>
 
-    <!-- Home Page Content -->
+    <!-- Sections -->
     <section id="home">
-        <h2>Willkommen bei der Synergia Group</h2>
-        <p>Wir bieten maßgeschneiderte Lösungen für Marketing, Management und Webentwicklung, um Ihre Marke zum Blühen zu bringen.</p>
+        <h2>Willkommen bei Synergia Group</h2>
+        <p>Wir bieten umfassende Lösungen für euer Business.</p>
+        <div class="trust" onclick="toggleTrustText()">Trust Stern der Synergia Group ★</div>
+        <div class="trust-text">
+            <h3>Eigentumserklärung des Trust Sterns</h3>
+            <p>Die Synergia Group ist der ausschließliche Eigentümer des Trust Sterns. Dieser Stern symbolisiert unser Engagement für Qualität und Vertrauen in allen angebotenen Dienstleistungen.</p>
+            <h4>Nutzungsbedingungen</h4>
+            <ol>
+                <li><strong>Rechte:</strong> Die Verwendung des Trust Sterns ist nur mit ausdrücklicher Genehmigung der Synergia Group gestattet. Eine unautorisierte Nutzung ist untersagt.</li>
+                <li><strong>Haftungsausschluss:</strong> Die Synergia Group übernimmt keine Verantwortung für Schäden, die aus der Verwendung des Trust Sterns entstehen.</li>
+                <li><strong>Änderungen:</strong> Die Synergia Group behält sich das Recht vor, diese Eigentumserklärung jederzeit zu ändern.</li>
+                <li><strong>Gerichtsstand:</strong> Für alle Streitigkeiten im Zusammenhang mit der Nutzung des Trust Sterns gilt der Gerichtsstand Hameln.</li>
+            </ol>
+            <h4>Kontakt</h4>
+            <p>Bei Fragen oder Anliegen wendet euch bitte an: E-Mail: <a href="mailto:synergiagroup@web.de">synergiagroup@web.de</a></p>
+        </div>
     </section>
 
-    <!-- Dienstleistungen Section -->
     <section id="dienstleistungen">
-        <h2>Dienstleistungen</h2>
-        <p>Wir erstellen professionelle Webseiten nach euren Wünschen. Ob für Unternehmen, Influencer oder Musiker – wir sorgen dafür, dass eure Online-Präsenz modern, benutzerfreundlich und ansprechend gestaltet wird.</p>
-        <p>Unser Team unterstützt euch dabei, eure Marke oder Projekte bekannt zu machen. Wir entwickeln maßgeschneiderte Marketingstrategien, die euch helfen, eure Zielgruppe effektiv zu erreichen.</p>
-        <p>Damit eure Webseite immer erreichbar ist, bieten wir zuverlässiges Hosting an. Mit schnellen Ladezeiten, regelmäßigen Backups und einem hohen Maß an Sicherheit stellen wir sicher, dass eure Webseite rund um die Uhr online bleibt.</p>
+        <h2>Unsere Dienstleistungen</h2>
+        <p>Wir bieten maßgeschneiderte Lösungen für eure Bedürfnisse.</p>
     </section>
 
-    <!-- Management Section -->
     <section id="management">
         <h2>Management</h2>
-        <p>Wir bieten professionelles Management für Influencer, Unternehmen und Musiker – ohne direkte Kosten. Stattdessen arbeiten wir auf Basis einer Gegenleistung: Wir unterstützen euch und erhalten im Gegenzug Werbung auf euren Kanälen.</p>
-        <p>Unser Ziel ist es, euch mit wertvollen Ratschlägen zu begleiten. Dabei analysieren wir, was ihr bereits gut macht und wo es noch Potenzial zur Verbesserung gibt.</p>
+        <p>Professionelles Management für Influencer, Unternehmen und Musiker.</p>
     </section>
 
-    <!-- Angebot Section -->
     <section id="angebot">
         <h2>Angebot</h2>
         <p>Holt euch jetzt ein individuelles Angebot für unsere Dienstleistungen!</p>
-        <p><a href="#kontakt">Jetzt Angebot einholen</a></p>
     </section>
 
-    <!-- Projekte Section -->
     <section id="projekte">
         <h2>Projekte</h2>
-        <p>KlarTextExperte – Ein Online-Forum für Schüler. Mit KlarTextExperte bieten wir Schülern eine Plattform, um sich auszutauschen und Lernressourcen zu teilen.</p>
+        <p>KlarTextExperte – Ein Online-Forum für Schüler.</p>
     </section>
 
-    <!-- Kontakt Section -->
     <section id="kontakt">
         <h2>Kontakt</h2>
-        <p>E-Mail: <a href="mailto:synergiagroup@web.de">synergiagroup@web.de</a><br>
-        Adresse: Feuergraben 41, 31785 Hameln</p>
+        <p>E-Mail: <a href="mailto:synergiagroup@web.de">synergiagroup@web.de</a></p>
+        <p>Adresse: Feuergraben 41, 31785 Hameln</p>
     </section>
 
-    <!-- Rechtliches Section -->
     <section id="rechtliches">
         <h2>Rechtliches</h2>
-        <h3>Allgemeine Geschäftsbedingungen (AGB)</h3>
-        <p>1. Vertragsgegenstand: Die Synergia Group erbringt Dienstleistungen im Bereich Webseitenerstellung, Marketing und Hosting.</p>
-        <p>2. Leistungsumfang: Die Synergia Group verpflichtet sich, die im Angebot vereinbarten Dienstleistungen nach bestem Wissen und Gewissen zu erbringen.</p>
-        <p>3. Vergütung: Die Vergütung erfolgt gemäß dem individuell vereinbarten Angebot.</p>
-        <p>4. Vertragsdauer und Kündigung: Die Vertragsdauer richtet sich nach dem vereinbarten Projekt.</p>
-        <p>5. Haftung: Die Synergia Group haftet nur für vorsätzliche oder grob fahrlässige Schäden.</p>
-        <p>6. Datenschutz: Die Synergia Group verpflichtet sich, die Daten ihrer Kunden vertraulich zu behandeln.</p>
-        <p>7. Gerichtsstand: Der Gerichtsstand ist Hameln.</p>
-        
-        <h3>Datenschutzerklärung</h3>
-        <p>1. Verantwortlicher: Synergia Group, Feuergraben 41, 31785 Hameln.</p>
-        <p>2. Erhebung personenbezogener Daten: Wir erheben nur notwendige Daten für die Durchführung unserer Dienstleistungen.</p>
-        <p>3. Weitergabe von Daten: Personenbezogene Daten werden nur dann an Dritte weitergegeben, wenn dies für die Vertragserfüllung notwendig ist.</p>
-        <p>4. Datenaufbewahrung: Wir speichern Daten nur so lange, wie es für die Erbringung unserer Dienstleistungen notwendig ist.</p>
-        <p>5. Rechte der betroffenen Personen: Ihr habt das Recht auf Auskunft, Berichtigung, Löschung oder Einschränkung der Verarbeitung.</p>
-        <p>6. Datensicherheit: Wir setzen technische Maßnahmen ein, um eure Daten zu schützen.</p>
-        <p>7. Änderungen: Wir behalten uns vor, diese Datenschutzerklärung zu ändern.</p>
+        <p>Hier finden Sie unsere Allgemeinen Geschäftsbedingungen und Datenschutzerklärung.</p>
     </section>
 
-    <!-- Footer Section -->
     <footer>
-        <p>
-            <a href="#rechtliches">AGB</a> | <a href="#rechtliches">Datenschutzrichtlinien</a>
-        </p>
-        <span class="trust" onclick="window.location.href='#trust';">⭐ TrustStern der Synergia Group</span>
-        <p>&copy; 2024 Synergia Group. Alle Rechte vorbehalten.</p>
+        <p>&copy; 2024 Synergia Group</p>
     </footer>
 
-    <!-- Trust Stern Section -->
-    <section id="trust" style="display:none;">
-        <h2>Trust Stern der Synergia Group</h2>
-        <p>Die Synergia Group ist der Eigentümer des Trust Sterns. Unser Ziel ist es, Transparenz und Vertrauen zu fördern. Wir stehen für Qualität und Zuverlässigkeit in allen unseren Dienstleistungen.</p>
-        <p>Unsere Rechtstexte sind wie folgt: Eigentumserklärung des Trust Sterns
-
-Die Synergia Group ist der ausschließliche Eigentümer des Trust Sterns. Dieser Stern symbolisiert unser Engagement für Qualität und Vertrauen in allen angebotenen Dienstleistungen.
-
-Nutzungsbedingungen
-
-	1.	Rechte: Die Verwendung des Trust Sterns ist nur mit ausdrücklicher Genehmigung der Synergia Group gestattet. Eine unautorisierte Nutzung ist untersagt.
-	2.	Haftungsausschluss: Die Synergia Group übernimmt keine Verantwortung für Schäden, die aus der Verwendung des Trust Sterns entstehen.
-	3.	Änderungen: Die Synergia Group behält sich das Recht vor, diese Eigentumserklärung jederzeit zu ändern.
-	4.	Gerichtsstand: Für alle Streitigkeiten im Zusammenhang mit der Nutzung des Trust Sterns gilt der Gerichtsstand Hameln.
-
-Kontakt
-
-Bei Fragen oder Anliegen wenden Sie sich bitte an:
-E-Mail: synergiagroup@web.de
-</p>
-        <ul>
-            <
+</body>
+</html>
