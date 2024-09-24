@@ -3,116 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Synergia - Homepage</title>
+    <title>Synergia - Modern Homepage</title>
     <style>
-        /* Grundlegendes Styling */
+        /* Grundlegendes Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background-color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1d1d1d;
+            padding: 20px;
             color: white;
-            padding: 15px;
-            text-align: center;
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+            top: 0;
         }
 
+        header h1 {
+            font-size: 24px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        /* Navigation Styles */
         nav {
-            background-color: #444;
-            overflow: hidden;
+            position: relative;
         }
 
         nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
         }
 
         nav ul li {
-            float: left;
             position: relative;
         }
 
         nav ul li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
             text-decoration: none;
+            color: white;
+            padding: 15px 20px;
+            display: block;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
         }
 
         nav ul li a:hover {
-            background-color: #555;
+            color: #f39c12;
         }
 
-        nav ul ul {
-            display: none;
+        /* Dropdown Menu */
+        nav ul li ul {
             position: absolute;
-            top: 50px;
+            top: 100%;
             left: 0;
-            background-color: #444;
-            z-index: 1;
-        }
-
-        nav ul li:hover > ul {
-            display: block;
-        }
-
-        nav ul ul li {
-            float: none;
+            background-color: #333;
             width: 200px;
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav ul li ul li {
+            width: 100%;
+        }
+
+        nav ul li ul li a {
+            padding: 10px 20px;
+        }
+
+        /* Sub-Dropdown */
+        nav ul li ul ul {
+            left: 100%;
+            top: 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/1600x900/?technology') center/cover no-repeat;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            margin-top: 80px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            line-height: 1.6;
         }
 
         .content {
-            padding: 20px;
+            padding: 50px 20px;
+            text-align: center;
         }
 
-        .news {
-            background-color: #f4f4f4;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 8px;
+        .content h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
         }
+
+        .content p {
+            font-size: 16px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Media Queries for Mobile */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                background-color: #1d1d1d;
+                position: fixed;
+                top: 60px;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                justify-content: center;
+                transition: right 0.5s ease;
+            }
+
+            nav ul li {
+                text-align: center;
+            }
+
+            nav ul li ul {
+                position: relative;
+            }
+
+            nav ul li:hover ul {
+                position: relative;
+            }
+
+            nav ul.open {
+                right: 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                cursor: pointer;
+                font-size: 24px;
+                color: white;
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
     </style>
 </head>
 <body>
 
 <header>
     <h1>Synergia</h1>
+    <div class="menu-toggle">&#9776;</div>
+    <nav>
+        <ul>
+            <li><a href="#">Dienstleistungen</a>
+                <ul>
+                    <li><a href="#">Für Unternehmen</a></li>
+                    <li><a href="#">Für Privatkunden</a></li>
+                    <li><a href="#">Management</a>
+                        <ul>
+                            <li><a href="#">Influencer</a></li>
+                            <li><a href="#">Musiker</a></li>
+                            <li><a href="#">Firmen</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">Projekte</a></li>
+            <li><a href="#">Kontakt</a></li>
+            <li><a href="#">Rechtliches</a></li>
+        </ul>
+    </nav>
 </header>
 
-<nav>
-    <ul>
-        <li><a href="#">Dienstleistungen</a>
-            <ul>
-                <li><a href="#">Für Unternehmen</a></li>
-                <li><a href="#">Für Privatkunden</a></li>
-                <li><a href="#">Management</a>
-                    <ul>
-                        <li><a href="#">Influencer</a></li>
-                        <li><a href="#">Musiker</a></li>
-                        <li><a href="#">Firmen</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li><a href="#">Projekte</a></li>
-        <li><a href="#">Kontakt</a></li>
-        <li><a href="#">Rechtliches</a></li>
-    </ul>
-</nav>
+<div class="hero">
+    <h2>Willkommen bei Synergia</h2>
+    <p>Wir arbeiten an der Integration von Magic GPT und künstlicher Intelligenz, um unsere Unternehmensstruktur zukunftssicher zu gestalten.</p>
+</div>
 
 <div class="content">
-    <h2>Willkommen bei Synergia</h2>
-    <p>Wir arbeiten derzeit intensiv daran, ein neues Programm in unser System zu integrieren, das auf Magic GPT und künstlicher Intelligenz basiert. Diese Technologien sollen unser Unternehmen effizienter und zukunftssicher gestalten. Bleiben Sie gespannt auf kommende Innovationen!</p>
-
-    <div class="news">
-        <h3>Aktuelle Unternehmens-News</h3>
-        <p>Wir freuen uns, ankündigen zu können, dass wir derzeit an einem neuen Programm arbeiten, das Magic GPT und künstliche Intelligenz in unsere Unternehmensstruktur integriert. Dies wird uns helfen, zukünftige Herausforderungen noch besser zu meistern und innovative Lösungen anzubieten.</p>
-    </div>
+    <h3>Aktuelle Unternehmens-News</h3>
+    <p>Wir freuen uns, ein neues Programm in unser System zu integrieren, das auf Magic GPT und künstlicher Intelligenz basiert. Dies wird uns helfen, zukünftige Herausforderungen besser zu meistern.</p>
 </div>
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navUl = document.querySelector('nav ul');
+
+    menuToggle.addEventListener('click', () => {
+        navUl.classList.toggle('open');
+    });
+</script>
 
 </body>
 </html>
