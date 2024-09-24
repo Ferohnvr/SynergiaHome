@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Synergia - Modern Homepage</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         /* Grundlegendes Reset */
         * {
@@ -18,6 +19,7 @@
             color: #333;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
 
         header {
@@ -25,7 +27,7 @@
             justify-content: space-between;
             align-items: center;
             background-color: #1d1d1d;
-            padding: 20px;
+            padding: 15px 20px;
             color: white;
             position: fixed;
             width: 100%;
@@ -39,7 +41,6 @@
             font-weight: 700;
         }
 
-        /* Hamburger Menu Styles */
         .menu-toggle {
             display: none;
             cursor: pointer;
@@ -47,7 +48,6 @@
             color: white;
         }
 
-        /* Navigation Styles */
         nav {
             position: relative;
         }
@@ -78,14 +78,13 @@
             color: #f39c12;
         }
 
-        /* Dropdown Menu - Versteckt */
         nav ul li ul {
             position: absolute;
             top: 100%;
             left: 0;
             background-color: #333;
             width: 200px;
-            display: none; /* Startzustand: verborgen */
+            display: none;
             z-index: 20;
         }
 
@@ -101,10 +100,9 @@
             padding: 10px 20px;
         }
 
-        /* Hamburger Styles für mobile Navigation */
         @media (max-width: 768px) {
             nav ul {
-                display: none; /* Verstecke das Menü standardmäßig */
+                display: none; 
                 flex-direction: column;
                 background-color: #1d1d1d;
                 position: absolute;
@@ -116,16 +114,16 @@
             }
 
             nav ul li {
-                margin: 0; /* Entferne Margin für mobile Ansicht */
+                margin: 0; 
                 text-align: center;
             }
 
             nav ul.open {
-                display: flex; /* Zeige das Menü an, wenn die Klasse 'open' hinzugefügt wird */
+                display: flex; 
             }
 
             .menu-toggle {
-                display: block; /* Zeige Hamburger-Icon auf mobilen Geräten */
+                display: block; 
             }
         }
 
@@ -155,6 +153,24 @@
             line-height: 1.6;
         }
 
+        /* Button Styles */
+        .button {
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #e67e22;
+        }
+
+        /* Content Section */
         .content {
             padding: 50px 20px;
             text-align: center;
@@ -172,31 +188,46 @@
             margin: 0 auto;
             line-height: 1.8;
         }
+
+        /* Footer */
+        footer {
+            background-color: #1d1d1d;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Synergia</h1>
+    <h1><i class="fas fa-home"></i> Home</h1>
     <div class="menu-toggle">&#9776;</div>
     <nav>
         <ul>
-            <li><a href="#">Dienstleistungen</a>
+            <li><a href="#" class="button">Synergia</a>
                 <ul>
-                    <li><a href="#">Für Unternehmen</a></li>
-                    <li><a href="#">Für Privatkunden</a></li>
-                    <li><a href="#">Management</a>
+                    <li><a href="#">Dienstleistungen</a>
                         <ul>
-                            <li><a href="#">Influencer</a></li>
-                            <li><a href="#">Musiker</a></li>
-                            <li><a href="#">Firmen</a></li>
+                            <li><a href="#">Für Unternehmen</a></li>
+                            <li><a href="#">Für Privatkunden</a></li>
+                            <li><a href="#">Management</a>
+                                <ul>
+                                    <li><a href="#">Influencer</a></li>
+                                    <li><a href="#">Musiker</a></li>
+                                    <li><a href="#">Firmen</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
+                    <li><a href="#">Projekte</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">Rechtliches</a></li>
                 </ul>
             </li>
-            <li><a href="#">Projekte</a></li>
-            <li><a href="#">Kontakt</a></li>
-            <li><a href="#">Rechtliches</a></li>
         </ul>
     </nav>
 </header>
@@ -210,6 +241,10 @@
     <h3>Aktuelle Unternehmens-News</h3>
     <p>Wir freuen uns, ein neues Programm in unser System zu integrieren, das auf ChatGPT und künstlicher Intelligenz basiert. Dies wird uns helfen, zukünftige Herausforderungen besser zu meistern.</p>
 </div>
+
+<footer>
+    <p>&copy; 2024 Synergia. Alle Rechte vorbehalten.</p>
+</footer>
 
 <script>
     const menuToggle = document.querySelector('.menu-toggle');
