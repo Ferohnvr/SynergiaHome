@@ -130,6 +130,15 @@
             .menu-toggle {
                 display: block; /* Zeige Hamburger-Icon auf mobilen Geräten */
             }
+
+            nav ul li ul {
+                position: static; /* Untermenüs bei mobilen Geräten statisch */
+                display: none; /* Startzustand: verborgen */
+            }
+
+            nav ul li.open > ul {
+                display: block; /* Zeige Untermenü an, wenn das übergeordnete Element die Klasse 'open' hat */
+            }
         }
 
         /* Hero Section */
@@ -178,11 +187,13 @@
     <div class="menu-toggle">&#9776;</div>
     <nav>
         <ul>
-            <li><a href="#">Dienstleistungen</a>
+            <li>
+                <a href="#">Dienstleistungen</a>
                 <ul>
                     <li><a href="#">Für Unternehmen</a></li>
                     <li><a href="#">Für Privatkunden</a></li>
-                    <li><a href="#">Management</a>
+                    <li>
+                        <a href="#">Management</a>
                         <ul>
                             <li><a href="#">Influencer</a></li>
                             <li><a href="#">Musiker</a></li>
@@ -222,9 +233,10 @@
     subMenus.forEach((link) => {
         link.addEventListener('click', (event) => {
             const nextElement = link.nextElementSibling;
+
             if (nextElement && nextElement.tagName === 'UL') {
                 event.preventDefault(); // Verhindert den Standard-Link-Klick
-                nextElement.classList.toggle('open'); // Untermenü ein- oder ausblenden
+                link.parentElement.classList.toggle('open'); // Öffne oder schließe das Untermenü
             }
         });
     });
