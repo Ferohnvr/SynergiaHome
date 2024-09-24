@@ -1,0 +1,254 @@
+/* Grundlegende Stile */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+}
+
+/* Header-Stil */
+header {
+    background-color: #333;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+header p {
+    font-size: 20px;
+    color: #ccc;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.menu-toggle {
+    background-color: #444;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background-color: #555;
+}
+
+.menu {
+    display: none;
+    background-color: #444;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+    z-index: 1000;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #575757;
+}
+
+/* Abschnittsstile */
+section {
+    padding: 100px 20px;
+    text-align: center;
+    display: none;
+    transition: opacity 0.5s ease;
+}
+
+section h2 {
+    font-size: 36px;
+    color: #333;
+}
+
+section p {
+    font-size: 18px;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Sichtbarkeit von Abschnitten */
+#home:target, #dienstleistungen:target, #management:target, #angebot:target, #projekte:target, #kontakt:target, #rechtliches:target {
+    display: block;
+}
+
+/* Footer-Stil */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #FFD700;
+}
+
+/* Trust Stern */
+.trust {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #FFD700;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.trust:hover {
+    transform: scale(1.05);
+}
+
+.trust-text {
+    display: none;
+    text-align: left;
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 36px;
+    }
+
+    header p {
+        font-size: 18px;
+    }
+
+    .menu-toggle {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    section h2 {
+        font-size: 28px;
+    }
+
+    section p {
+        font-size: 16px;
+    }
+}
+
+/* Button-Stile */
+.button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Formular-Stile */
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+    border-color: #007BFF;
+}
+
+form input[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Tooltip-Stile */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Platzierung über dem Tooltip */
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
