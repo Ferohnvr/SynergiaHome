@@ -16,8 +16,6 @@
             font-family: 'Poppins', sans-serif;
             background-color: #f0f0f0;
             color: #333;
-            margin: 0;
-            padding: 0;
         }
 
         header {
@@ -25,7 +23,7 @@
             justify-content: space-between;
             align-items: center;
             background-color: #1d1d1d;
-            padding: 20px;
+            padding: 10px 20px;
             color: white;
             position: fixed;
             width: 100%;
@@ -48,6 +46,7 @@
             list-style: none;
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         nav ul li {
@@ -69,7 +68,7 @@
             color: #f39c12;
         }
 
-        /* Dropdown Menu - Immer sichtbar */
+        /* Dropdown Menu */
         nav ul li ul {
             position: absolute;
             top: 100%;
@@ -111,11 +110,13 @@
                 left: 0;
                 width: 100%;
                 padding: 10px 0;
+                margin: 0;
             }
 
             nav ul li {
                 margin-right: 0; /* Entferne Margin für mobile Ansicht */
                 text-align: center;
+                width: 100%; /* Vollständige Breite für mobile Ansicht */
             }
 
             nav ul.open {
