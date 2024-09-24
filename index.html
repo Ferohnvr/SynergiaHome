@@ -19,7 +19,6 @@
             color: #333;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
         }
 
         header {
@@ -41,27 +40,19 @@
             font-weight: 700;
         }
 
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 24px;
-            color: white;
-        }
-
         nav {
-            position: relative;
+            display: flex;
         }
 
         nav ul {
             list-style: none;
             display: flex;
             align-items: center;
-            transition: all 0.3s ease;
         }
 
         nav ul li {
             position: relative;
-            margin-right: 20px;
+            margin-right: 30px;
         }
 
         nav ul li a {
@@ -78,13 +69,14 @@
             color: #f39c12;
         }
 
+        /* Dropdown Styles */
         nav ul li ul {
             position: absolute;
             top: 100%;
             left: 0;
             background-color: #333;
             width: 200px;
-            display: none;
+            display: none; /* Startzustand: verborgen */
             z-index: 20;
         }
 
@@ -98,33 +90,6 @@
 
         nav ul li ul li a {
             padding: 10px 20px;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                display: none; 
-                flex-direction: column;
-                background-color: #1d1d1d;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                padding: 10px 0;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            }
-
-            nav ul li {
-                margin: 0; 
-                text-align: center;
-            }
-
-            nav ul.open {
-                display: flex; 
-            }
-
-            .menu-toggle {
-                display: block; 
-            }
         }
 
         /* Hero Section */
@@ -153,27 +118,11 @@
             line-height: 1.6;
         }
 
-        /* Button Styles */
-        .button {
-            background-color: #f39c12;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-            text-decoration: none;
-        }
-
-        .button:hover {
-            background-color: #e67e22;
-        }
-
         /* Content Section */
         .content {
             padding: 50px 20px;
             text-align: center;
+            margin-top: 80px; /* Abstand für Header */
         }
 
         .content h3 {
@@ -205,10 +154,9 @@
 
 <header>
     <h1><i class="fas fa-home"></i> Home</h1>
-    <div class="menu-toggle">&#9776;</div>
     <nav>
         <ul>
-            <li><a href="#" class="button">Synergia</a>
+            <li><a href="#">Synergia</a>
                 <ul>
                     <li><a href="#">Dienstleistungen</a>
                         <ul>
@@ -245,15 +193,6 @@
 <footer>
     <p>&copy; 2024 Synergia. Alle Rechte vorbehalten.</p>
 </footer>
-
-<script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navUl = document.querySelector('nav ul');
-
-    menuToggle.addEventListener('click', () => {
-        navUl.classList.toggle('open');
-    });
-</script>
 
 </body>
 </html>
