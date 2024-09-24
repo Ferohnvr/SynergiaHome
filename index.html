@@ -16,6 +16,8 @@
             font-family: 'Poppins', sans-serif;
             background-color: #f0f0f0;
             color: #333;
+            margin: 0;
+            padding: 0;
         }
 
         header {
@@ -23,7 +25,7 @@
             justify-content: space-between;
             align-items: center;
             background-color: #1d1d1d;
-            padding: 10px 20px;
+            padding: 20px;
             color: white;
             position: fixed;
             width: 100%;
@@ -37,6 +39,14 @@
             font-weight: 700;
         }
 
+        /* Hamburger Menu Styles */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+
         /* Navigation Styles */
         nav {
             position: relative;
@@ -46,7 +56,7 @@
             list-style: none;
             display: flex;
             align-items: center;
-            flex-wrap: wrap;
+            transition: all 0.3s ease;
         }
 
         nav ul li {
@@ -68,7 +78,7 @@
             color: #f39c12;
         }
 
-        /* Dropdown Menu */
+        /* Dropdown Menu - Versteckt */
         nav ul li ul {
             position: absolute;
             top: 100%;
@@ -91,15 +101,7 @@
             padding: 10px 20px;
         }
 
-        /* Hamburger Menu Styles */
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 24px;
-            color: white;
-        }
-
-        /* Styles für mobile Navigation */
+        /* Hamburger Styles für mobile Navigation */
         @media (max-width: 768px) {
             nav ul {
                 display: none; /* Verstecke das Menü standardmäßig */
@@ -110,25 +112,16 @@
                 left: 0;
                 width: 100%;
                 padding: 10px 0;
-                margin: 0;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             }
 
             nav ul li {
-                margin-right: 0; /* Entferne Margin für mobile Ansicht */
+                margin: 0; /* Entferne Margin für mobile Ansicht */
                 text-align: center;
-                width: 100%; /* Vollständige Breite für mobile Ansicht */
             }
 
             nav ul.open {
                 display: flex; /* Zeige das Menü an, wenn die Klasse 'open' hinzugefügt wird */
-            }
-
-            nav ul li ul {
-                display: none; /* Startzustand: verborgen */
-            }
-
-            nav ul li.open > ul {
-                display: block; /* Zeige Untermenü an, wenn das übergeordnete Element die Klasse 'open' hat */
             }
 
             .menu-toggle {
@@ -156,7 +149,12 @@
             font-weight: bold;
         }
 
-        /* Content Section */
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
         .content {
             padding: 50px 20px;
             text-align: center;
@@ -174,15 +172,6 @@
             margin: 0 auto;
             line-height: 1.8;
         }
-
-        /* Footer */
-        footer {
-            background-color: #1d1d1d;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            position: relative;
-        }
     </style>
 </head>
 <body>
@@ -192,13 +181,11 @@
     <div class="menu-toggle">&#9776;</div>
     <nav>
         <ul>
-            <li>
-                <a href="#">Dienstleistungen</a>
+            <li><a href="#">Dienstleistungen</a>
                 <ul>
                     <li><a href="#">Für Unternehmen</a></li>
                     <li><a href="#">Für Privatkunden</a></li>
-                    <li>
-                        <a href="#">Management</a>
+                    <li><a href="#">Management</a>
                         <ul>
                             <li><a href="#">Influencer</a></li>
                             <li><a href="#">Musiker</a></li>
@@ -222,23 +209,7 @@
 <div class="content">
     <h3>Aktuelle Unternehmens-News</h3>
     <p>Wir freuen uns, ein neues Programm in unser System zu integrieren, das auf ChatGPT und künstlicher Intelligenz basiert. Dies wird uns helfen, zukünftige Herausforderungen besser zu meistern.</p>
-    
-    <h3>Unsere Dienstleistungen</h3>
-    <p>Unsere Dienstleistungen sind maßgeschneidert für Unternehmen und Privatkunden. Wir bieten Beratung, Unterstützung und innovative Lösungen, um die Effizienz und Produktivität zu steigern.</p>
-
-    <h3>Für Unternehmen</h3>
-    <p>Wir unterstützen Unternehmen dabei, ihre Ziele zu erreichen, indem wir maßgeschneiderte Strategien und Lösungen anbieten. Unser Fokus liegt auf der Optimierung von Geschäftsprozessen und der Integration neuer Technologien.</p>
-
-    <h3>Für Privatkunden</h3>
-    <p>Wir bieten individuelle Dienstleistungen für Privatkunden an, um deren Bedürfnisse und Wünsche zu erfüllen. Unser Ziel ist es, den Alltag zu erleichtern und eine hohe Kundenzufriedenheit zu gewährleisten.</p>
-
-    <h3>Management</h3>
-    <p>Im Managementbereich bieten wir Unterstützung für Influencer, Musiker und Firmen an. Unsere Expertise hilft dabei, die Sichtbarkeit und den Erfolg unserer Kunden zu steigern.</p>
 </div>
-
-<footer>
-    <p>&copy; 2024 Synergia. Alle Rechte vorbehalten.</p>
-</footer>
 
 <script>
     const menuToggle = document.querySelector('.menu-toggle');
@@ -246,21 +217,6 @@
 
     menuToggle.addEventListener('click', () => {
         navUl.classList.toggle('open');
-    });
-
-    // Funktionalität für die Untermenüs
-    const subMenus = document.querySelectorAll('nav ul li > a');
-
-    subMenus.forEach((link) => {
-        link.addEventListener('click', (event) => {
-            const nextElement = link.nextElementSibling;
-
-            // Prüfe, ob das nächste Element ein UL ist
-            if (nextElement && nextElement.tagName === 'UL') {
-                event.preventDefault(); // Verhindert den Standard-Link-Klick
-                link.parentElement.classList.toggle('open'); // Öffne oder schließe das Untermenü
-            }
-        });
     });
 </script>
 
