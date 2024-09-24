@@ -3,225 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Synergia Group</title>
+    <title>Synergia - Homepage</title>
     <style>
+        /* Grundlegendes Styling */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            scroll-behavior: smooth;
         }
+
         header {
             background-color: #333;
-            height: 100vh;
             color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 15px;
             text-align: center;
         }
-        header h1 {
-            font-size: 60px;
-            margin: 0;
-        }
-        header p {
-            font-size: 20px;
-            color: #ccc;
-        }
+
         nav {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-        }
-        .menu-toggle {
             background-color: #444;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
+            overflow: hidden;
         }
-        .menu {
-            display: none;
-            background-color: #444;
-            border-radius: 5px;
-            position: absolute;
-            right: 0;
-            z-index: 1000;
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
         }
-        .menu a {
+
+        nav ul li {
+            float: left;
+            position: relative;
+        }
+
+        nav ul li a {
+            display: block;
             color: white;
+            text-align: center;
+            padding: 14px 20px;
             text-decoration: none;
-            padding: 10px 15px;
-            display: block;
         }
-        .menu a:hover {
-            background-color: #575757;
+
+        nav ul li a:hover {
+            background-color: #555;
         }
-        section {
-            padding: 100px 20px;
-            text-align: center;
+
+        nav ul ul {
             display: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            background-color: #444;
+            z-index: 1;
         }
-        section h2 {
-            font-size: 36px;
-            color: #333;
-        }
-        section p {
-            font-size: 18px;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        #home:target, #dienstleistungen:target, #management:target, #angebot:target, #projekte:target, #kontakt:target, #rechtliches:target {
+
+        nav ul li:hover > ul {
             display: block;
         }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
+
+        nav ul ul li {
+            float: none;
+            width: 200px;
+        }
+
+        .content {
             padding: 20px;
         }
-        footer a {
-            color: white;
-            text-decoration: none;
-            padding: 0 10px;
-        }
-        .trust {
+
+        .news {
+            background-color: #f4f4f4;
+            padding: 20px;
             margin-top: 20px;
-            font-size: 18px;
-            color: #FFD700;
-            cursor: pointer;
-        }
-        .trust-text {
-            display: none;
-            text-align: left;
-            margin: 20px auto;
-            max-width: 600px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 15px;
-            border-radius: 5px;
+            border-radius: 8px;
         }
     </style>
-    <script>
-        function toggleMenu() {
-            const menu = document.querySelector('.menu');
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-        }
-        
-        function closeMenu() {
-            document.querySelector('.menu').style.display = 'none';
-        }
-        
-        function toggleTrustText() {
-            const trustText = document.querySelector('.trust-text');
-            trustText.style.display = trustText.style.display === 'block' ? 'none' : 'block';
-        }
-    </script>
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header>
-        <h1>Synergia Group</h1>
-        <p>Ihr Partner für Marketing, Management und innovative Lösungen</p>
-    </header>
+<header>
+    <h1>Synergia</h1>
+</header>
 
-    <!-- Navigation -->
-    <nav>
-        <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
-        <div class="menu">
-            <a href="#home" onclick="closeMenu()">Home</a>
-            <a href="#dienstleistungen" onclick="closeMenu()">Dienstleistungen</a>
-            <a href="#management" onclick="closeMenu()">Management</a>
-            <a href="#angebot" onclick="closeMenu()">Angebot</a>
-            <a href="#projekte" onclick="closeMenu()">Projekte</a>
-            <a href="#kontakt" onclick="closeMenu()">Kontakt</a>
-            <a href="#rechtliches" onclick="closeMenu()">Rechtliches</a>
-        </div>
-    </nav>
+<nav>
+    <ul>
+        <li><a href="#">Dienstleistungen</a>
+            <ul>
+                <li><a href="#">Für Unternehmen</a></li>
+                <li><a href="#">Für Privatkunden</a></li>
+                <li><a href="#">Management</a>
+                    <ul>
+                        <li><a href="#">Influencer</a></li>
+                        <li><a href="#">Musiker</a></li>
+                        <li><a href="#">Firmen</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#">Projekte</a></li>
+        <li><a href="#">Kontakt</a></li>
+        <li><a href="#">Rechtliches</a></li>
+    </ul>
+</nav>
 
-    <!-- Sections -->
-    <section id="home">
-        <h2>Willkommen bei Synergia Group</h2>
-        <p>Wir bieten umfassende Lösungen für euer Business.</p>
-        <div class="trust" onclick="toggleTrustText()">Trust Stern der Synergia Group ★</div>
-        <div class="trust-text">
-            <h3>Eigentumserklärung des Trust Sterns</h3>
-            <p>Die Synergia Group ist der ausschließliche Eigentümer des Trust Sterns. Dieser Stern symbolisiert unser Engagement für Qualität und Vertrauen in allen angebotenen Dienstleistungen.</p>
-            <h4>Nutzungsbedingungen</h4>
-            <ol>
-                <li><strong>Rechte:</strong> Die Verwendung des Trust Sterns ist nur mit ausdrücklicher Genehmigung der Synergia Group gestattet. Eine unautorisierte Nutzung ist untersagt.</li>
-                <li><strong>Haftungsausschluss:</strong> Die Synergia Group übernimmt keine Verantwortung für Schäden, die aus der Verwendung des Trust Sterns entstehen.</li>
-                <li><strong>Änderungen:</strong> Die Synergia Group behält sich das Recht vor, diese Eigentumserklärung jederzeit zu ändern.</li>
-                <li><strong>Gerichtsstand:</strong> Für alle Streitigkeiten im Zusammenhang mit der Nutzung des Trust Sterns gilt der Gerichtsstand Hameln.</li>
-            </ol>
-            <h4>Kontakt</h4>
-            <p>Bei Fragen oder Anliegen wendet euch bitte an: E-Mail: <a href="mailto:synergiagroup@web.de">synergiagroup@web.de</a></p>
-        </div>
-    </section>
+<div class="content">
+    <h2>Willkommen bei Synergia</h2>
+    <p>Wir arbeiten derzeit intensiv daran, ein neues Programm in unser System zu integrieren, das auf Magic GPT und künstlicher Intelligenz basiert. Diese Technologien sollen unser Unternehmen effizienter und zukunftssicher gestalten. Bleiben Sie gespannt auf kommende Innovationen!</p>
 
-    <section id="dienstleistungen">
-        <h2>Unsere Dienstleistungen</h2>
-        <p>Wir bieten maßgeschneiderte Lösungen für eure Bedürfnisse.</p>
-        <ul>
-            <li><strong>Webseite erstellen:</strong> Professionelle Webseiten nach euren Wünschen.</li>
-            <li><strong>Marketing:</strong> Maßgeschneiderte Marketingstrategien für eure Projekte.</li>
-            <li><strong>Webseite hosten:</strong> Zuverlässiges Hosting mit hoher Sicherheit.</li>
-        </ul>
-    </section>
+    <div class="news">
+        <h3>Aktuelle Unternehmens-News</h3>
+        <p>Wir freuen uns, ankündigen zu können, dass wir derzeit an einem neuen Programm arbeiten, das Magic GPT und künstliche Intelligenz in unsere Unternehmensstruktur integriert. Dies wird uns helfen, zukünftige Herausforderungen noch besser zu meistern und innovative Lösungen anzubieten.</p>
+    </div>
+</div>
 
-    <section id="management">
-        <h2>Management</h2>
-        <p>Professionelles Management für Influencer, Unternehmen und Musiker.</p>
-        <p>Wir unterstützen euch ohne direkte Kosten und arbeiten auf Basis von Gegenleistungen.</p>
-    </section>
-
-    <section id="angebot">
-        <h2>Angebot</h2>
-        <p>Holt euch jetzt ein individuelles Angebot für unsere Dienstleistungen!</p>
-    </section>
-
-    <section id="projekte">
-        <h2>Projekte</h2>
-        <p>KlarTextExperte – Ein Online-Forum für Schüler.</p>
-    </section>
-
-    <section id="kontakt">
-        <h2>Kontakt</h2>
-        <p>E-Mail: <a href="mailto:synergiagroup@web.de">synergiagroup@web.de</a></p>
-        <p>Adresse: Feuergraben 41, 31785 Hameln</p>
-    </section>
-
-    <section id="rechtliches">
-        <h2>Rechtliches</h2>
-        <h3>Allgemeine Geschäftsbedingungen (AGB)</h3>
-        <p>1. Vertragsgegenstand: Die Synergia Group erbringt Dienstleistungen im Bereich Webseitenerstellung, Marketing und Hosting.</p>
-        <p>2. Leistungsumfang: Die Synergia Group verpflichtet sich, die im Angebot vereinbarten Dienstleistungen nach bestem Wissen und Gewissen zu erbringen.</p>
-        <p>3. Vergütung: Die Vergütung erfolgt gemäß dem individuell vereinbarten Angebot.</p>
-        <p>4. Vertragsdauer und Kündigung: Die Vertragsdauer richtet sich nach dem vereinbarten Projekt.</p>
-        <p>5. Haftung: Die Synergia Group haftet nur für vorsätzliche oder grob fahrlässige Schäden.</p>
-        <p>6. Datenschutz: Weitere Informationen zum Umgang mit persönlichen Daten sind in der Datenschutzerklärung zu finden.</p>
-        <p>7. Gerichtsstand: Der Gerichtsstand ist Hameln.</p>
-
-        <h3>Datenschutzerklärung</h3>
-        <p>1. Verantwortlicher: Die Synergia Group, Feuergraben 41, 31785 Hameln.</p>
-        <p>2. Erhebung und Verarbeitung personenbezogener Daten: Wir erheben nur die Daten, die für die Durchführung unserer Dienstleistungen notwendig sind.</p>
-        <p>3. Rechtsgrundlage der Verarbeitung: Die Verarbeitung erfolgt auf Basis von Artikel 6 Absatz 1 lit. b) DSGVO.</p>
-        <p>4. Weitergabe von Daten an Dritte: Personenbezogene Daten werden nur dann an Dritte weiter         <p>gegeben, wenn dies für die Durchführung der Dienstleistung erforderlich ist.</p>
-        <p>5. Speicherung von Daten: Personenbezogene Daten werden nur so lange gespeichert, wie es für den Zweck der Verarbeitung erforderlich ist.</p>
-        <p>6. Rechte der Betroffenen: Ihr habt das Recht auf Auskunft, Berichtigung und Löschung eurer personenbezogenen Daten.</p>
-        <p>7. Kontakt: Bei Fragen zur Datenschutzerklärung könnt ihr uns unter der E-Mail-Adresse <a href="mailto:synergiagroup@web.de">synergiagroup@web.de</a> erreichen.</p>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Synergia Group. Alle Rechte vorbehalten.</p>
-        <a href="#rechtliches">AGB</a>
-        <a href="#rechtliches">Datenschutzerklärung</a>
-    </footer>
 </body>
 </html>
