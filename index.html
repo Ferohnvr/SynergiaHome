@@ -123,21 +123,16 @@
                 display: flex; /* Zeige das Menü an, wenn die Klasse 'open' hinzugefügt wird */
             }
 
-            nav ul li:hover > ul {
-                display: block; /* Untermenü anzeigen bei Hover */
-            }
-
-            .menu-toggle {
-                display: block; /* Zeige Hamburger-Icon auf mobilen Geräten */
-            }
-
             nav ul li ul {
-                position: static; /* Untermenüs bei mobilen Geräten statisch */
                 display: none; /* Startzustand: verborgen */
             }
 
             nav ul li.open > ul {
                 display: block; /* Zeige Untermenü an, wenn das übergeordnete Element die Klasse 'open' hat */
+            }
+
+            .menu-toggle {
+                display: block; /* Zeige Hamburger-Icon auf mobilen Geräten */
             }
         }
 
@@ -234,6 +229,7 @@
         link.addEventListener('click', (event) => {
             const nextElement = link.nextElementSibling;
 
+            // Prüfe, ob das nächste Element ein UL ist
             if (nextElement && nextElement.tagName === 'UL') {
                 event.preventDefault(); // Verhindert den Standard-Link-Klick
                 link.parentElement.classList.toggle('open'); // Öffne oder schließe das Untermenü
