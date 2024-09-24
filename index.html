@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synergia - Modern Homepage</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Grundlegendes Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1d1d1d;
+            padding: 15px 20px;
+            color: white;
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+            top: 0;
+        }
+
+        header h1 {
+            font-size: 24px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin-right: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 15px 20px;
+            display: block;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #f39c12;
+        }
+
+        /* Dropdown Styles */
+        nav ul li ul {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            width: 200px;
+            display: none; /* Startzustand: verborgen */
+            z-index: 20;
+        }
+
+        nav ul li:hover > ul {
+            display: block; /* Untermenü anzeigen bei Hover */
+        }
+
+        nav ul li ul li {
+            width: 100%;
+        }
+
+        nav ul li ul li a {
+            padding: 10px 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/1600x900/?technology') center/cover no-repeat;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            margin-top: 80px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 80px; /* Abstand für Header */
+        }
+
+        .content h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 16px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Dienstleistungen Section */
+        .services {
+            padding: 50px 20px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .services h4 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .services p {
+            font-size: 16px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1d1d1d;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1><i class="fas fa-home"></i> Home</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Menü</a>
+                <ul>
+                    <li><a href="#">Dienstleistungen</a>
+                        <ul>
+                            <li><a href="#">Für Unternehmen</a></li>
+                            <li><a href="#">Für Privatkunden</a></li>
+                            <li><a href="#">Management</a>
+                                <ul>
+                                    <li><a href="#">Influencer</a></li>
+                                    <li><a href="#">Musiker</a></li>
+                                    <li><a href="#">Firmen</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Projekte</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">Rechtliches</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<div class="hero">
+    <h2>Willkommen bei Synergia</h2>
+    <p>Wir arbeiten an der Integration von ChatGPT und künstlicher Intelligenz, um unsere Unternehmensstruktur zukunftssicher zu gestalten.</p>
+</div>
+
+<div class="content">
+    <h3>Aktuelle Unternehmens-News</h3>
+    <p>Wir freuen uns, ein neues Programm in unser System zu integrieren, das auf ChatGPT und künstlicher Intelligenz basiert. Dies wird uns helfen, zukünftige Herausforderungen besser zu meistern.</p>
+</div>
+
+<!-- Dienstleistungen Section -->
+<div class="services">
+    <h4>Dienstleistungen für Unternehmen</h4>
+    <p>Wir bieten eine Vielzahl von Dienstleistungen an, um Ihr Unternehmen auf die nächste Stufe zu heben:</p>
+    <ul>
+        <li><strong>Webseiten Herstellung:</strong> Wir erstellen professionelle und ansprechende Webseiten, die Ihre Marke repräsentieren.</li>
+        <li><strong>Programmierung:</strong> Maßgeschneiderte Softwarelösungen für Ihre spezifischen Anforderungen.</li>
+        <li><strong>Marketing:</strong> Strategien zur Steigerung Ihrer Sichtbarkeit und Reichweite im Internet.</li>
+        <li><strong>SEO Tools:</strong> Optimierung Ihrer Webseiten für Suchmaschinen, um mehr Traffic zu generieren.</li>
+        <li><strong>Usw.</strong> Kontaktieren Sie uns für weitere Dienstleistungen!</li>
+    </ul>
+</div>
+
+<!-- Dienstleistungen für Privatkunden -->
+<div class="services">
+    <h4>Dienstleistungen für Privatkunden</h4>
+    <p>Wir bieten individuelle Lösungen für Privatkunden an, um Ihre Bedürfnisse zu erfüllen:</p>
+    <ul>
+        <li><strong>Webdesign:</strong> Erstellung von ansprechenden und funktionalen Webseiten für Einzelpersonen und kleine Unternehmen.</li>
+        <li><strong>Online-Marketing:</strong> Unterstützung bei der Sichtbarkeit Ihrer persönlichen Projekte und Dienstleistungen.</li>
+        <li><strong>Social Media Management:</strong> Verwaltung Ihrer Social-Media-Präsenz für eine bessere Online-Präsenz.</li>
+        <li><strong>Persönliche Beratung:</strong> Individuelle Beratung und Unterstützung in allen Fragen rund um digitale Lösungen.</li>
+    </ul>
+</div>
+
+<!-- Management Section -->
+<div class="services">
+    <h4>Management Dienstleistungen</h4>
+    <p>Unsere Management-Dienstleistungen helfen Ihnen, Ihre Talente und Projekte optimal zu verwalten:</p>
+    <ul>
+        <li><strong>Influencer Management:</strong> Unterstützung bei der Markenbildung und dem Wachstum Ihrer Influencer-Karriere.</li>
+        <li><strong>Musiker Management:</strong> Strategien zur Förderung und Verwaltung von Künstlerkarrieren.</li>
+        <li><strong>Firmen Management:</strong> Beratung und Unterstützung für Unternehmen in verschiedenen Bereichen.</li>
+    </ul>
+</div>
+
+<!-- Projekte Section -->
+<div class="services">
+    <h4>Unsere Projekte</h4>
+    <p>Wir sind stolz auf unsere vielfältigen Projekte, die wir in der Vergangenheit umgesetzt haben:</p>
+    <ul>
+        <li><strong>Webseiten für lokale Unternehmen:</strong> Erstellung von Webseiten für lokale Geschäfte zur Stärkung ihrer Online-Präsenz.</li>
+        <li><strong>Marketing-Kampagnen:</strong> Durchführung von erfolgreichen Marketing-Kampagnen für verschiedene Kunden.</li>
+        <li><strong>Softwareentwicklung:</strong> Entwicklung maßgeschneiderter Softwarelösungen für diverse Anforderungen.</li>
+    </ul>
+</div>
+
+<!-- Kontakt Section -->
+<div class="services">
+    <h4>Kontakt</h4>
+    <p>Wir freuen uns auf Ihre Nachricht! Sie <!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synergia - Modern Homepage</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Grundlegendes Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1d1d1d;
+            padding: 15px 20px;
+            color: white;
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+            top: 0;
+        }
+
+        header h1 {
+            font-size: 24px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin-right: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 15px 20px;
+            display: block;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #f39c12;
+        }
+
+        /* Dropdown Styles */
+        nav ul li ul {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            width: 200px;
+            display: none; /* Startzustand: verborgen */
+            z-index: 20;
+        }
+
+        nav ul li:hover > ul {
+            display: block; /* Untermenü anzeigen bei Hover */
+        }
+
+        nav ul li ul li {
+            width: 100%;
+        }
+
+        nav ul li ul li a {
+            padding: 10px 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/1600x900/?technology') center/cover no-repeat;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            margin-top: 80px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 80px; /* Abstand für Header */
+        }
+
+        .content h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 16px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Dienstleistungen Section */
+        .services {
+            padding: 50px 20px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .services h4 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .services p {
+            font-size: 16px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1d1d1d;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1><i class="fas fa-home"></i> Home</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Menü</a>
+                <ul>
+                    <li><a href="#">Dienstleistungen</a>
+                        <ul>
+                            <li><a href="#">Für Unternehmen</a></li>
+                            <li><a href="#">Für Privatkunden</a></li>
+                            <li><a href="#">Management</a>
+                                <ul>
+                                    <li><a href="#">Influencer</a></li>
+                                    <li><a href="#">Musiker</a></li>
+                                    <li><a href="#">Firmen</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Projekte</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">Rechtliches</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<div class="hero">
+    <h2>Willkommen bei Synergia</h2>
+    <p>Wir arbeiten an der Integration von ChatGPT und künstlicher Intelligenz, um unsere Unternehmensstruktur zukunftssicher zu gestalten.</p>
+</div>
+
+<div class="content">
+    <h3>Aktuelle Unternehmens-News</h3>
+    <p>Wir freuen uns, ein neues Programm in unser System zu integrieren, das auf ChatGPT und künstlicher Intelligenz basiert. Dies wird uns helfen, zukünftige Herausforderungen besser zu meistern.</p>
+</div>
+
+<!-- Dienstleistungen Section -->
+<div class="services">
+    <h4>Dienstleistungen für Unternehmen</h4>
+    <p>Wir bieten eine Vielzahl von Dienstleistungen an, um Ihr Unternehmen auf die nächste Stufe zu heben:</p>
+    <ul>
+        <li><strong>Webseiten Herstellung:</strong> Wir erstellen professionelle und ansprechende Webseiten, die Ihre Marke repräsentieren.</li>
+        <li><strong>Programmierung:</strong> Maßgeschneiderte Softwarelösungen für Ihre spezifischen Anforderungen.</li>
+        <li><strong>Marketing:</strong> Strategien zur Steigerung Ihrer Sichtbarkeit und Reichweite im Internet.</li>
+        <li><strong>SEO Tools:</strong> Optimierung Ihrer Webseiten für Suchmaschinen, um mehr Traffic zu generieren.</li>
+        <li><strong>Usw.</strong> Kontaktieren Sie uns für weitere Dienstleistungen!</li>
+    </ul>
+</div>
+
+<!-- Dienstleistungen für Privatkunden -->
+<div class="services">
+    <h4>Dienstleistungen für Privatkunden</h4>
+    <p>Wir bieten individuelle Lösungen für Privatkunden an, um Ihre Bedürfnisse zu erfüllen:</p>
+    <ul>
+        <li><strong>Webdesign:</strong> Erstellung von ansprechenden und funktionalen Webseiten für Einzelpersonen und kleine Unternehmen.</li>
+        <li><strong>Online-Marketing:</strong> Unterstützung bei der Sichtbarkeit Ihrer persönlichen Projekte und Dienstleistungen.</li>
+        <li><strong>Social Media Management:</strong> Verwaltung Ihrer Social-Media-Präsenz für eine bessere Online-Präsenz.</li>
+        <li><strong>Persönliche Beratung:</strong> Individuelle Beratung und Unterstützung in allen Fragen rund um digitale Lösungen.</li>
+    </ul>
+</div>
+
+<!-- Management Section -->
+<div class="services">
+    <h4>Management Dienstleistungen</h4>
+    <p>Unsere Management-Dienstleistungen helfen Ihnen, Ihre Talente und Projekte optimal zu verwalten:</p>
+    <ul>
+        <li><strong>Influencer Management:</strong> Unterstützung bei der Markenbildung und dem Wachstum Ihrer Influencer-Karriere.</li>
+        <li><strong>Musiker Management:</strong> Strategien zur Förderung und Verwaltung von Künstlerkarrieren.</li>
+        <li><strong>Firmen Management:</strong> Beratung und Unterstützung für Unternehmen in verschiedenen Bereichen.</li>
+    </ul>
+</div>
+
+<!-- Projekte Section -->
+<div class="services">
+    <h4>Unsere Projekte</h4>
+    <p>Wir sind stolz auf unsere vielfältigen Projekte, die wir in der Vergangenheit umgesetzt haben:</p>
+    <ul>
+        <li><strong>Webseiten für lokale Unternehmen:</strong> Erstellung von Webseiten für lokale Geschäfte zur Stärkung ihrer Online-Präsenz.</li>
+        <li><strong>Marketing-Kampagnen:</strong> Durchführung von erfolgreichen Marketing-Kampagnen für verschiedene Kunden.</li>
+        <li><strong>Softwareentwicklung:</strong> Entwicklung maßgeschneiderter Softwarelösungen für diverse Anforderungen.</li>
+    </ul>
+</div>
+
+<!-- Kontakt Section -->
+<div class="services">
+    <h4>Kontakt</h4>
+    <p>Wir freuen uns auf Ihre Nachricht! Sie können uns jederzeit erreichen unter:</p>
+    <p>Email: <a href="mailto:synergi<!-- Kontakt Section Fortsetzung -->
+    <p>Email: <a href="mailto:synergiagroup@web.de">synergiagroup@web.de</a></p>
+    <p>Oder nutzen Sie unser <a href="https://form.jotform.com/242673631281355">Kontaktformular</a>.</p>
+</div>
+
+<!-- Rechtliches Section -->
+<div class="services">
+    <h4>Rechtliches</h4>
+    <p>Hier finden Sie unsere rechtlichen Hinweise:</p>
+    <ul>
+        <li><a href="#">AGB</a></li>
+        <li><a href="#">Datenschutzrichtlinien</a></li>
+        <li><a href="#">Datenschutzerklärung</a></li>
+    </ul>
+    <h5>Impressum</h5>
+    <p>Immorewsum</p>
+    <p>Feuergraben 41<br>
+    31785 Hameln<br>
+    Deutschland</p>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Synergia. Alle Rechte vorbehalten.</p>
+</footer>
+
+</body>
+</html>
