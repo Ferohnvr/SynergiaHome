@@ -52,6 +52,7 @@
 
         nav ul li {
             position: relative;
+            margin-right: 20px;
         }
 
         nav ul li a {
@@ -68,22 +69,16 @@
             color: #f39c12;
         }
 
-        /* Dropdown Menu */
+        /* Dropdown Menu - Immer sichtbar */
         nav ul li ul {
             position: absolute;
             top: 100%;
             left: 0;
             background-color: #333;
             width: 200px;
-            display: none;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        nav ul li:hover ul {
             display: block;
             opacity: 1;
+            visibility: visible;
             transform: translateY(0);
         }
 
@@ -99,6 +94,15 @@
         nav ul li ul ul {
             left: 100%;
             top: 0;
+        }
+
+        /* Styling für Untermenü (damit es nicht immer eingeblendet ist) */
+        nav ul li ul {
+            display: none; /* Startzustand: verborgen */
+        }
+
+        nav ul li:hover > ul {
+            display: block; /* Nur das Untermenü des gerade aktiven Menüs wird angezeigt */
         }
 
         /* Hero Section */
