@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synergia Group</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <script>
+        // Lädt die Navigationsleiste
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("navbar.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("navbar-container").innerHTML = data;
+                });
+        });
+    </script>
+</head>
+<body>
+    <!-- Navigationscontainer -->
+    <div id="navbar-container"></div>
+
+    <!-- Header Abschnitt -->
+    <header>
+        <h1>Synergia Group</h1>
+        <p>Ihr Partner für Marketing, Management und innovative Lösungen</p>
+    </header>
+
+    <!-- Hauptinhalt -->
+    <main>
+        <section id="home">
+            <h2>Willkommen bei Synergia Group</h2>
+            <p>Wir bieten umfassende Lösungen für Ihr Business.</p>
+            <h3>Mini-Blog über KI</h3>
+            <p>In der heutigen Geschäftswelt spielt Künstliche Intelligenz (KI) eine entscheidende Rolle. Unternehmen integrieren KI-Technologien, um Prozesse zu optimieren, Kosten zu senken und die Effizienz zu steigern. Durch die Zusammenarbeit mit Technologieanbietern können Unternehmen maßgeschneiderte KI-Lösungen entwickeln, die ihren spezifischen Anforderungen entsprechen. Diese Integration ermöglicht es, datengestützte Entscheidungen zu treffen, die nicht nur die Produktivität steigern, sondern auch innovative Ansätze für die Geschäftsentwicklung fördern.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Synergia Group. Alle Rechte vorbehalten.</p>
+        <a href="rechtliches.html">AGB</a>
+        <a href="rechtliches.html">Datenschutzerklärung</a>
+    </footer>
+</body>
+</html>
