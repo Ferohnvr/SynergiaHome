@@ -76,10 +76,12 @@
             left: 0;
             background-color: #333;
             width: 200px;
-            display: block;
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
+            display: none; /* Startzustand: verborgen */
+            z-index: 20;
+        }
+
+        nav ul li:hover > ul {
+            display: block; /* Untermenü anzeigen bei Hover */
         }
 
         nav ul li ul li {
@@ -90,19 +92,43 @@
             padding: 10px 20px;
         }
 
-        /* Sub-Dropdown */
-        nav ul li ul ul {
-            left: 100%;
-            top: 0;
+        /* Hamburger Menu Styles */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
         }
 
-        /* Styling für Untermenü (damit es nicht immer eingeblendet ist) */
-        nav ul li ul {
-            display: none; /* Startzustand: verborgen */
-        }
+        /* Styles für mobile Navigation */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; /* Verstecke das Menü standardmäßig */
+                flex-direction: column;
+                background-color: #1d1d1d;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                padding: 10px 0;
+            }
 
-        nav ul li:hover > ul {
-            display: block; /* Nur das Untermenü des gerade aktiven Menüs wird angezeigt */
+            nav ul li {
+                margin-right: 0; /* Entferne Margin für mobile Ansicht */
+                text-align: center;
+            }
+
+            nav ul.open {
+                display: flex; /* Zeige das Menü an, wenn die Klasse 'open' hinzugefügt wird */
+            }
+
+            nav ul li:hover > ul {
+                display: block; /* Untermenü anzeigen bei Hover */
+            }
+
+            .menu-toggle {
+                display: block; /* Zeige Hamburger-Icon auf mobilen Geräten */
+            }
         }
 
         /* Hero Section */
@@ -125,12 +151,6 @@
             font-weight: bold;
         }
 
-        .hero p {
-            font-size: 18px;
-            max-width: 700px;
-            line-height: 1.6;
-        }
-
         .content {
             padding: 50px 20px;
             text-align: center;
@@ -148,49 +168,6 @@
             margin: 0 auto;
             line-height: 1.8;
         }
-
-        /* Media Queries for Mobile */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                background-color: #1d1d1d;
-                position: fixed;
-                top: 60px;
-                right: -100%;
-                width: 100%;
-                height: 100vh;
-                justify-content: center;
-                transition: right 0.5s ease;
-            }
-
-            nav ul li {
-                text-align: center;
-            }
-
-            nav ul li ul {
-                position: relative;
-            }
-
-            nav ul li:hover ul {
-                position: relative;
-            }
-
-            nav ul.open {
-                right: 0;
-            }
-
-            .menu-toggle {
-                display: block;
-                cursor: pointer;
-                font-size: 24px;
-                color: white;
-            }
-        }
-
-        .menu-toggle {
-            display: none;
-        }
-
     </style>
 </head>
 <body>
@@ -222,12 +199,12 @@
 
 <div class="hero">
     <h2>Willkommen bei Synergia</h2>
-    <p>Wir arbeiten an der Integration von Magic GPT und künstlicher Intelligenz, um unsere Unternehmensstruktur zukunftssicher zu gestalten.</p>
+    <p>Wir arbeiten an der Integration von ChatGPT und künstlicher Intelligenz, um unsere Unternehmensstruktur zukunftssicher zu gestalten.</p>
 </div>
 
 <div class="content">
     <h3>Aktuelle Unternehmens-News</h3>
-    <p>Wir freuen uns, ein neues Programm in unser System zu integrieren, das auf Magic GPT und künstlicher Intelligenz basiert. Dies wird uns helfen, zukünftige Herausforderungen besser zu meistern.</p>
+    <p>Wir freuen uns, ein neues Programm in unser System zu integrieren, das auf ChatGPT und künstlicher Intelligenz basiert. Dies wird uns helfen, zukünftige Herausforderungen besser zu meistern.</p>
 </div>
 
 <script>
@@ -236,6 +213,19 @@
 
     menuToggle.addEventListener('click', () => {
         navUl.classList.toggle('open');
+    });
+
+    // Funktionalität für die Untermenüs
+    const subMenus = document.querySelectorAll('nav ul li > a');
+
+    subMenus.forEach((link) => {
+        link.addEventListener('click', (event) => {
+            const nextElement = link.nextElementSibling;
+            if (nextElement && nextElement.tagName === 'UL') {
+                event.preventDefault(); // Verhindert den Standard-Link-Klick
+                nextElement.classList.toggle('open'); // Untermenü ein- oder ausblenden
+            }
+        });
     });
 </script>
 
